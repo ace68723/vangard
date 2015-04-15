@@ -1,0 +1,29 @@
+/* Your application styles go here */
+.Vmenu{
+	background-color: #000;
+}
+.Vlogo{
+	width: 100%;
+}
+.Vlist{
+	border-color: #cca352;
+	background-color: #030303;
+	color: #FFF;
+	position: relative;
+	z-index: 2;
+	display: block;
+	margin: -3px;
+	padding: 16px;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 16px;
+}
+.Vicon{
+	font-size:2.5em;
+}
+.Vitem-font{
+	  font-size: 35px;
+}
+.Vslide{
+	height:300px;
+}
