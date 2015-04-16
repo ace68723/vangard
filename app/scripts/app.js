@@ -52,6 +52,16 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
       }
     })
 
+    .state('app.product', {
+      url: '/product',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/product.tpl.html',
+          // controller: 'HomeCtrl as hc'
+        }
+      }
+    })
+
 
     .state('app.browse', {
       url: '/browse',

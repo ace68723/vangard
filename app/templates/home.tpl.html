@@ -1,7 +1,7 @@
-<ion-view title="Search">
+<ion-view title="Home">
  
   <ion-content class="has-header">
-   	<ion-slide-box active-slide="myActiveSlide" auto-play="true" does-continue="true" show-pager="true">
+   	<ion-slide-box active-slide="myActiveSlide" auto-play="false" does-continue="true" show-pager="true">
 
 
    	  <ion-slide>
@@ -14,6 +14,124 @@
    	    <div class="Vslide pink"><h1>slide3</h1></div>
    	  </ion-slide>
         
-   	    </ion-slide-box>
+   	</ion-slide-box>
+        <div class="itemList col-80 col-offset-10">    
+
+            <div class="Vhome-item" 
+                 ng-repeat="(id,item) in hc.items"
+                 ng-init="clicked={'z-index':1000-id}">
+                <img ng-style="{'z-index':1000-2*id+2}"
+                     class="Vphoto" 
+                     ng-src="{{item.img}}" 
+                     alt="" 
+                     ng-click="hc.showDesc(id)">
+                
+                <div ng-class="{slideOutUp:(hc.showId !== id)}"
+                     ng-style="{'z-index':1000-2*id+1}"
+                     class=" Vitem-card  animated slideInDown"
+                     ng-show="hc.showId == id">
+                   
+                        <div class="row Vitem-name">
+                          <div class="col col-67">{{item.name}}</div>
+                          <div class="col">{{item.view}}</div>
+                        </div>
+                        <div class="Vitem-description">
+                          <div class="col">{{item.description}}</div>
+                          
+                        </div>
+                        <div class=" Vitem-button">
+                          <div class="col col-offset-25">
+                              <button class="button button-clear button-green"
+                                      ng-click="hc.showProView()">
+                                Check out this product 
+                              </button>
+                          </div>
+                          
+                        </div>
+                   
+                </div>
+            </div>
+            
+        </div>   
+        <button class="button button-dark" 
+                style=" margin-left: 45%;" 
+                ng-click="hc.seeMore()">
+              See More
+            </button>   
+
+
+
+
   </ion-content>
+</ion-view>
+
+<ion-view title="Home" 
+          class="animated slideInUp" 
+          ng-class="{slideOutDown:!hc.showProduct}"
+          ng-if="hc.proView">
+    
+    <div class="bar bar-header bar-dark">
+        <i class="icon ion-ios7-arrow-back"></i> 
+        <h1 class="title">Product</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="hc.showProduct=false">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <ion-content class="col col-50 has-header" 
+                 scroll="false" >
+      
+
+
+      <ion-slide-box delegate-handle="Slider" on-slide-changed="slideHasChanged($index)" show-pager="false" does-continue="true" slide-interval="4000">
+        <ion-slide ng-repeat="slide in slideList">
+          <div class="box blue" >
+            <img  class="img" 
+                  ng-src="{{slide.imgURL}}">
+
+                  {{slide.id}}
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+      <br>
+      
+      <ion-scroll scroller direction="x" class="nav-scroller" delegate-handle="Nav">
+        
+        <div  class="nav" 
+              ng-repeat="nav in slideList"
+              ng-click="navHasChanged({{nav.id}})"
+              id="anchor{{nav.id}}" 
+              >
+            
+            {{nav.id}}
+            <img  class="nav-img" 
+                  ng-class="{'active':isSelectedNav(nav.id)}"
+                  ng-src="{{nav.imgURL}}">
+            
+        </div>
+      </ion-scroll> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ion-content>
+    <ion-content class="col col-50 col-offset-50 has-header">
+       test
+    </ion-content>
 </ion-view>

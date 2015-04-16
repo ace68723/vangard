@@ -1,0 +1,189 @@
+.slider {
+  position:relative;
+  top:5%;
+  height: 38%;
+  border-bottom: 1px solid #ccc;
+  z-index: 1;
+}
+.slider-slide {
+  /*padding-top: 80px;*/
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+
+}
+.nav-scroller {
+  overflow: scroll;
+  white-space: nowrap;
+}
+.nav{
+  width:14%;
+  height:100%;
+  /*display div in a line*/
+  display:inline;
+}
+.shadows{
+  width:14%;
+  display:inline;
+  height: auto;
+  box-shadow: inset 0px -130px 41px -51px #000000;
+  /* background-color: black; */
+  z-index: 1;
+}
+.nav-img{
+  width: 14%;
+  height: auto;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+    
+  filter: grayscale(100%);
+  
+  filter: gray;
+}
+.nav-scroller .nav .active{
+  width: 14%;
+  height: auto;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  -o-filter: none;
+    
+  filter: none;
+  
+  filter: none;
+}
+.img {
+width: auto; 
+height: auto;
+top: 0%;
+left: 0%;
+}
+.slide-info{
+  width: 25%;
+  height: 70%;
+  position: absolute;
+  top: 17%;
+  right: 3%;
+  z-index: 2;
+  text-align: -webkit-left;
+}
+.slide-info .info-price{
+  text-align: -webkit-left;
+  position: absolute;
+  top: 67%;
+  right: 10%;
+}
+.slide-info-bg{
+  background: black;
+  opacity: 0.2;
+  width: 25%;
+  height: 70%;
+  position: absolute;
+  top: 17%;
+  right: 3%;
+  z-index: 1;
+}
+
+/*content position*/
+
+.has-slide {
+    top: 44%;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .has-slide, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
+    top: 44%;
+}
+/***********************************************************************************content position*/
+
+.catgory{
+  width: 100%;
+  height: 280px;
+}
+.catgory-img {
+width: 100%; 
+height: 90%;
+top: 0%;
+left: 0%;
+}
+.catgory-title{
+  text-align: -webkit-center;
+  width: 100%; 
+  height: 7%;
+  position: relative;
+  top: 0%;
+  left: 0%;
+}
+.subtitle {
+  font-size: 14px;
+  position: absolute;
+  right: 2%;
+  top: 53%;
+}
+
+.restaurant{
+  top:50%;
+}
+.restaurant-icon{
+  width: 50%;
+  position: relative;
+  top: 0px;
+  left: -13px;
+}
+.restaurant-title {
+  width: 50%;
+  position: absolute;
+  top: 20%;
+  left: 41%;
+}
+.restaurant-name{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-size: 1.4em;
+}
+.restaurant-subtitle{
+  position: relative;
+  top: 14px;
+  left: 0px;
+  font-size: 1.0em;
+}
+.restaurant-order {
+  position: relative;
+  top: 26px;
+  left: 69%;
+  font-size: 1.0em;
+}
+a {
+text-decoration: none;
+color: #007aff;
+}
+.order-button {
+  border: 1px solid #007aff;
+  color: #007aff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  line-height: 27px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  padding: 0 10px;
+  margin: 0;
+  width: 42%;
+  height: 29px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 17px;
+  font-family: inherit;
+  cursor: pointer;
+}
