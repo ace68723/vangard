@@ -33,14 +33,6 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
       controller: 'AppCtrl'
     })
 
-    // .state('app.search', {
-    //   url: '/search',
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: 'templates/search.html'
-    //     }
-    //   }
-    // })
 
     .state('app.home', {
       url: '/home',
@@ -52,44 +44,31 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
       }
     })
 
-    // .state('app.product', {
-    //   url: '/product',
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: 'templates/product.tpl.html',
-    //       // controller: 'HomeCtrl as hc'
-    //     }
-    //   }
-    // })
+    .state('app.about', {
+      url: '/about',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/about.tpl.html'
+        }
+      }
+    })
+    .state('app.blog', {
+      url: '/blog',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/blog.tpl.html',
+        }
+      }
+    })
+    .state('app.contact', {
+      url: '/contact',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/contact.tpl.html',
+        }
+      }
+    })
 
-
-    // .state('app.browse', {
-    //   url: '/browse',
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: 'templates/browse.html'
-    //     }
-    //   }
-    // })
-    // .state('app.playlists', {
-    //   url: '/playlists',
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: 'templates/playlists.html',
-    //       controller: 'PlaylistsCtrl'
-    //     }
-    //   }
-    // })
-
-    // .state('app.single', {
-    //   url: '/playlists/:playlistId',
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: 'templates/playlist.html',
-    //       controller: 'PlaylistCtrl'
-    //     }
-    //   }
-    // });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });

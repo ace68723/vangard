@@ -83,8 +83,8 @@ angular.module('vangardApp')
    		};
 
          hc.showProView = function() {
-            hc.proView = true;
-            hc.showProduct = true;
+            hc.proView = true;//ngif
+            hc.showProduct = true;//ngshow
          };
           hc.closeProView = function() {
             hc.showProduct = false; //ngshow
