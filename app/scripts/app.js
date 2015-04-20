@@ -33,14 +33,14 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: '/search',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/search.html'
-        }
-      }
-    })
+    // .state('app.search', {
+    //   url: '/search',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/search.html'
+    //     }
+    //   }
+    // })
 
     .state('app.home', {
       url: '/home',
@@ -52,45 +52,45 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
       }
     })
 
-    .state('app.product', {
-      url: '/product',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/product.tpl.html',
-          // controller: 'HomeCtrl as hc'
-        }
-      }
-    })
+    // .state('app.product', {
+    //   url: '/product',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/product.tpl.html',
+    //       // controller: 'HomeCtrl as hc'
+    //     }
+    //   }
+    // })
 
 
-    .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
+    // .state('app.browse', {
+    //   url: '/browse',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/browse.html'
+    //     }
+    //   }
+    // })
+    // .state('app.playlists', {
+    //   url: '/playlists',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/playlists.html',
+    //       controller: 'PlaylistsCtrl'
+    //     }
+    //   }
+    // })
 
-    .state('app.single', {
-      url: '/playlists/:playlistId',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlist.html',
-          controller: 'PlaylistCtrl'
-        }
-      }
-    });
+    // .state('app.single', {
+    //   url: '/playlists/:playlistId',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/playlist.html',
+    //       controller: 'PlaylistCtrl'
+    //     }
+    //   }
+    // });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });
 

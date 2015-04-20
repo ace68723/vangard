@@ -1,11 +1,12 @@
 <ion-view title="Home">
  
   <ion-content class="has-header">
-   	<ion-slide-box active-slide="myActiveSlide" auto-play="false" does-continue="true" show-pager="true">
+   	
+    <ion-slide-box active-slide="myActiveSlide" auto-play="ture" does-continue="true" show-pager="true">
 
 
    	  <ion-slide>
-	    <div class="Vslide blue" ><h1 >slide1</div>
+	    <div class="Vslide blue" ><h1 >slide1 hello </div>
    	  </ion-slide>
    	  <ion-slide>
    	    <div class="Vslide yellow"><h1>slide2</h1></div>
@@ -15,6 +16,7 @@
    	  </ion-slide>
         
    	</ion-slide-box>
+        
         <div class="itemList col-80 col-offset-10">    
 
             <div class="Vhome-item" 
@@ -41,10 +43,10 @@
                         </div>
                         <div class=" Vitem-button">
                           <div class="col col-offset-25">
-                              <button class="button button-clear button-green"
+                              <div class="button button-clear button-green"
                                       ng-click="hc.showProView()">
                                 Check out this product 
-                              </button>
+                              </div>
                           </div>
                           
                         </div>
@@ -53,11 +55,11 @@
             </div>
             
         </div>   
-        <button class="button button-dark" 
+        <div class="button button-dark" 
                 style=" margin-left: 45%;" 
                 ng-click="hc.seeMore()">
               See More
-            </button>   
+            </div>   
 
 
 
@@ -74,9 +76,9 @@
         <i class="icon ion-ios7-arrow-back"></i> 
         <h1 class="title">Product</h1>
         <div class="buttons">
-            <button class="button button-clear" ng-click="hc.showProduct=false">
+            <div class="button button-clear" ng-click="hc.showProduct=false">
                 Close
-            </button>
+            </div>
         </div>
     </div>
 
