@@ -67,3 +67,52 @@
 .VitemClicked{
 	z-index: 3;
 }
+.Vproduct-title{
+	position: relative;
+	margin-top:10%;
+	font-size: 50px;
+	font-weight: 900;
+}
+.Vproduct-subtitle{
+	position: relative;
+	margin-top:10%;
+	font-size: 25px;
+	font-weight: 900;
+	color:#034D56;
+}
+.Vproduct-shopTitle{
+	position: relative;
+	margin-top:3%;
+	font-size: 23px;
+	font-weight: 400;
+}
+.Vproduct-shopInfo{
+	position: relative;
+	margin-left:10%;
+	font-size: 15px;
+	font-weight: 400;
+}
+.Vproduct-eventTitle{
+	position: relative;
+	margin-top:3%;
+	font-size: 23px;
+	font-weight: 400;
+}
+.Vproduct-eventInfo{
+	position: relative;
+	margin-left:10%;
+	font-size: 15px;
+	font-weight: 400;
+}
+.Vproduct-description{
+	position: relative;
+	margin-top:5%;
+}
+.Vproduct-share{
+	margin-top:5%;
+	font-size: 23px;
+	font-weight: 400;
+}
+a:link {
+    color: #034D56;
+}
