@@ -86,6 +86,17 @@ angular.module('vangardApp')
             hc.proView = true;
             hc.showProduct = true;
          };
+          hc.closeProView = function() {
+            hc.showProduct = false; //ngshow
+            $timeout(function() {
+                 hc.proView = false; //ngif
+            },500)
+           
+         };
+
+
+
+
 
              var slider = $ionicSlideBoxDelegate.$getByHandle('Slider');
              var nav = $ionicScrollDelegate.$getByHandle('Nav');
