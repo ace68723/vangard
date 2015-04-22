@@ -1,18 +1,71 @@
-var Q = require('q');
-var express = require('express');
-var bodyParser = require('body-parser');
-var cors = require('cors');
-var userLogin = require('./models/userLogin');
-var jwt = require('./models/jwt');
-
-var app = express();
+var Q 			= require('q');
+var express    	= require('express');
+var bodyParser 	= require('body-parser');
+var cors 		= require('cors');
+var userLogin 	= require('./models/userLogin');
+var jwt 		= require('./models/jwt');
+var path    	= require('path');
+var fs  		= require('fs');
+var busboy 		= require('connect-busboy');
+var app 		= express();
 
 
 
 
 
 app.use(cors());
+app.use(busboy());
 app.use(bodyParser.json());
+
+// app.use(express.static(path.join(__dirname, 'front-end')));
+// app.use(express.static(path.join(__dirname, 'upload')));
+app.use("/img", express.static(path.join(__dirname, 'img')));
+
+app.get('/home',function(req,res) {
+	
+
+	jwt.decode(token).then(function(jwt_decoded) {
+
+		
+		res.json(jobs);
+
+	}).catch(function(error) {
+		
+		res.status(401).send({
+			message: 'You are not authorized'
+		});
+	})
+	
+
+
+	
+})
+
+app.get('/control',function(req,res) {
+	
+
+		res.status(401).send({
+			message: 'You are not authorized'
+		});
+
+})
+
+app.post('/img',function (req, res) {
+
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+	      var stream = fs.createWriteStream(__dirname + '/img/' + filename);
+	      file.pipe(stream);
+	      stream.on('close', function () {
+	        // console.log('File ' + filename + ' is uploaded');
+	        
+	        res.json({
+	          filename: filename
+	        });
+	      });
+    });
+});
+
 
 app.post('/register',function(req,res) {
 	var user = req.body;

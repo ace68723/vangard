@@ -6,7 +6,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
+angular.module('vangardApp', ['ionic','config', 'Vangard.controllers','angularFileUpload'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -33,6 +33,22 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
       controller: 'AppCtrl'
     })
 
+    .state('control', {
+      url: '/control',
+      abstract: true,
+      templateUrl: 'templates/controlMenu.html',
+      controller: 'AppCtrl'
+    })
+
+    .state('control.slides', {
+      url: '/slides',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/control.tpl.html',
+          controller: 'ControlCtrl as cc'
+        }
+      }
+    })
 
     .state('app.home', {
       url: '/home',
@@ -67,7 +83,7 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers'])
           templateUrl: 'templates/contact.tpl.html',
         }
       }
-    })
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');

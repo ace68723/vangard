@@ -1,0 +1,90 @@
+<ion-view title="Control">
+  <ion-content class="has-header">
+    <h1>{{cc.hello}}</h1>
+
+    <div class="VslideList col-80 col-offset-10">    
+
+        <div class="Vslide-item"
+        	 ng-repeat="(id,slide) in cc.slides">
+<!--             <img class="Vphoto" 
+                 ng-src="{{slide.img}}" 
+                 alt="" 
+                 ng-click="hc.showDesc(id)"> -->
+            
+            <div class="list card">
+
+              <div class="item ">
+                <h2>Slide{{slide.id}}</h2>
+              </div>
+
+	            <div class="item item-image">
+	                <img ng-hide="image" ng-src="{{slide.img}}" >
+	                <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}"/> 
+	            </div>
+
+              <a class="item item-icon-left assertive" href="#" type="file" name="pic" accept="image/*">
+                <i class="icon ion-edit"></i>
+               	Edit
+              </a>
+            	
+
+
+
+        	</div>
+        
+    	</div>   
+
+
+        <input type="file" 
+               nv-file-select="" 
+               class="custom-file-input" 
+               uploader="uploader"/><br/>
+
+           <div class= "row"ng-repeat="item in uploader.queue">
+               <div class= "col col-67">
+                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                   
+                
+                    
+                    <div ng-show="uploader.isHTML5" nowrap>
+                        <strong>{{ item.file.name }}</strong>
+                        {{ item.file.size/1024/1024|number:2 }} MB
+                    </div>
+                </div>
+               
+
+               <div class= "col col-33" nowrap>
+                    
+                    <label class="item item-input">
+                      <span class="input-label">Slide NO.</span>
+                      <input type="number" ng-model="item.slideNo" >
+                    </label>
+                    {{item.slideNo}}
+                    <button class="button button-positive"
+                            ng-click="item.upload()" 
+                            ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                        Upload
+                    </button>
+
+                    <button class="button button-assertive"
+                            ng-click="item.remove()"
+                            ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                        Romve
+                    </button>
+
+               </div>
+
+           </div>
+
+    </div>
+	 
+
+
+
+
+
+
+
+
+	</ion-content>
+</ion-view>

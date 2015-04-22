@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-rc.2",
-    "animate.css": "4.0.0.alpha-1"
+    "animate.css": "4.0.0.alpha-1",
+    "angular-file-upload": "~1.1.5"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.17",
