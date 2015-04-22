@@ -8,13 +8,27 @@
  * Controller of the vangardApp
  */
 angular.module('vangardApp')
-  	.controller('HomeCtrl', function ($scope,$timeout,$ionicSlideBoxDelegate,$ionicScrollDelegate,$location) {
+  	.controller('HomeCtrl', 
+        function ($scope,$timeout,$ionicSlideBoxDelegate,$ionicScrollDelegate,$location,API_URL,$http) {
    		var hc = this;
    		hc.paperClick = function(index) {
    			console.log(index)
    		};
-   		hc.test = "hello"
-
+   		hc.getSlides = function() {
+                    $http.get(API_URL +'control/getSlides')
+                            .success(function(data, status, headers, config) {
+                                hc.slides = data.slides;
+                                hc.showSlides = true;
+                               console.log(hc.slides)
+                            })
+                            .error(function(data, status, headers, config) {
+                                // called asynchronously if an error occurs
+                                // or server returns response with an error status.
+                    });
+                };
+        
+        hc.getSlides();
+                
    		hc.items = [{ 	description : 'Sometimes the scent of seasonal hand wash is all we need to rouse our holiday spirits.',
    						img: 'img/item.png',
    						name: 'Name of the Product',

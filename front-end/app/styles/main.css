@@ -25,7 +25,10 @@
 	  font-size: 35px;
 }
 .Vslide{
-	height:300px;
+	height:auto;
+}
+.Vslide-img{
+	width:100%;
 }
 .VitemList{
 	margin-top:10%;

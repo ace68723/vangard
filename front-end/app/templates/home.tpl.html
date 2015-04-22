@@ -1,19 +1,25 @@
 <ion-view title="Home">
  
-  <ion-content class="has-header">
+  <ion-content class="">
    	
-    <ion-slide-box active-slide="myActiveSlide" auto-play="ture" does-continue="true" show-pager="true">
+    <ion-slide-box ng-if="hc.showSlides" 
+                   active-slide="myActiveSlide" 
+                   does-continue="true"
+                   auto-play="true"
+                   show-pager="true">
 
 
-   	  <ion-slide>
-	    <div class="Vslide blue" ><h1 >slide1 hello </div>
-   	  </ion-slide>
+   	  <ion-slide ng-repeat="(id,slide) in hc.slides">
+	    <!-- <div class="Vslide blue" > -->
+        <img class="Vslide-img" ng-src="{{slide.img}}" >
+        <!-- </div> -->
+   	  </ion-slide><!-- 
    	  <ion-slide>
    	    <div class="Vslide yellow"><h1>slide2</h1></div>
    	  </ion-slide>
    	  <ion-slide>
    	    <div class="Vslide pink"><h1>slide3</h1></div>
-   	  </ion-slide>
+   	  </ion-slide> -->
         
    	</ion-slide-box>
         
