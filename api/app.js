@@ -2,11 +2,13 @@ var Q 			= require('q');
 var express    	= require('express');
 var bodyParser 	= require('body-parser');
 var cors 		= require('cors');
-var userLogin 	= require('./models/userLogin');
-var jwt 		= require('./models/jwt');
 var path    	= require('path');
 var fs  		= require('fs');
 var busboy 		= require('connect-busboy');
+
+var userLogin 	= require('./models/userLogin');
+var jwt 		= require('./models/jwt');
+var control		= require('./models/control');
 var app 		= express();
 
 
@@ -43,10 +45,60 @@ app.get('/home',function(req,res) {
 
 app.get('/control',function(req,res) {
 	
+		control.setSlides('123','sdfjdks/asdfsd').then(function(data) {
+			console.log(data);
+			res.status(200).send({
+				message: 'You are not authorized'
+			});
+		})
+		
 
-		res.status(401).send({
-			message: 'You are not authorized'
+})
+
+app.get('/control/getSlides',function(req,res) {
+		
+
+		control
+		.getSlides().then(function(slides) {
+			
+			res.status(200).send({
+				slides: slides
+			});
+		})
+		.catch(function(error) {
+		
+		res.status(404).send({
+			message: error
 		});
+	})
+		
+
+})
+
+app.post('/control/setSlides',function(req,res) {
+		var slide 		= req.body;
+		var slide_id	= slide.id;
+		console.log(req);
+
+		control.setSlides(slide_id,slide).then(function(data) {
+			
+			res.status(200).send({
+				message: 'You are not authorized'
+			});
+		})
+		
+
+})
+
+app.post('/control/rmSlides',function(req,res) {
+		
+		var slide_id	= req.body.slide_id;
+		control.rmSlides(slide_id).then(function(data) {
+			res.status(200).send({
+				message: data
+			});
+		})
+		
 
 })
 

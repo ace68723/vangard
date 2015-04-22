@@ -6,30 +6,33 @@ angular.module('vangardApp')
 		var cc = this;
 	    cc.hello = "ControlCtrl";
 
-	    cc.slides = [{ 	id:1,
-	    				img: 'img/item.png',
-	    				link: ''
-	    			},
-	    			{ 	id:2,
-	    				img: 'img/item.png',
-	    				link: ''
-	    			},
-	    			{ 	id:3,
-	    				img: 'img/item.png',
-	    				link: ''
-	    			}
-	    ]
+        cc.getSlides = function() {
+            $http.get('http://localhost:3000/control/getSlides')
+                    
+                    .success(function(data, status, headers, config) {
+                        cc.slides = data.slides
+                        console.log( cc.slides);
+                    })
+                    .error(function(data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+            });
+        };
 
-	    // cc.upload = function(image) {
-     //        var formData = new FormData();
-     //        formData.append('image', image[0]);
-     //       	console.log(image)
-     //        $http.post('http://localhost:3000/upload', image)
-     //        .success(function(result) {
-     //            $scope.uploadedImgSrc = result.src;
-     //            $scope.sizeInBytes = result.size;
-     //        });
-     //    };
+        cc.getSlides();//init
+
+        cc.removeSlde = function(id) {
+            
+            $http.post('http://localhost:3000/control/rmSlides', {slide_id: id})
+                    
+                    .success(function(data, status, headers, config) {
+                        cc.getSlides();
+                    })
+                    .error(function(data, status, headers, config) {
+                        alert(data)
+            });
+        };
+       
 
         var uploader = $scope.uploader = new FileUploader({
                   url: 'http://localhost:3000/img'
@@ -66,7 +69,22 @@ angular.module('vangardApp')
                   // console.info('onProgressAll', progress);
               };
               uploader.onSuccessItem = function(fileItem, response, status, headers) {
-                  console.log('onSuccessItem', fileItem, response, status, headers);
+                    console.log('onSuccessItem', fileItem, response, status, headers);
+                    
+                    var setSlides  = {};
+                    setSlides.id   = fileItem.slideNo - 1 ; //id start from 0
+                    setSlides.img  = fileItem.url + '/' + fileItem.file.name;
+
+                    console.log(setSlides);
+                    
+                    $http.post('http://localhost:3000/control/setSlides', setSlides)
+                    
+                    .success(function(data, status, headers, config) {
+                        cc.getSlides();
+                    })
+                    .error(function(data, status, headers, config) {
+                        alert(data)
+                    });
               };
               uploader.onErrorItem = function(fileItem, response, status, headers) {
                   // console.info('onErrorItem', fileItem, response, status, headers);

@@ -14,7 +14,7 @@
             <div class="list card">
 
               <div class="item ">
-                <h2>Slide{{slide.id}}</h2>
+                <h2>Slide{{slide.id + 1}}</h2>
               </div>
 
 	            <div class="item item-image">
@@ -22,9 +22,13 @@
 	                <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}"/> 
 	            </div>
 
-              <a class="item item-icon-left assertive" href="#" type="file" name="pic" accept="image/*">
-                <i class="icon ion-edit"></i>
-               	Edit
+              <a class="item  assertive" 
+                 href="#" 
+                 type="file" 
+                 name="pic" 
+                 ng-click="cc.removeSlde(slide.id)">
+                
+               	Remove
               </a>
             	
 
@@ -59,7 +63,6 @@
                       <span class="input-label">Slide NO.</span>
                       <input type="number" ng-model="item.slideNo" >
                     </label>
-                    {{item.slideNo}}
                     <button class="button button-positive"
                             ng-click="item.upload()" 
                             ng-disabled="item.isReady || item.isUploading || item.isSuccess">
