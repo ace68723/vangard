@@ -2,12 +2,12 @@
 
 
 angular.module('vangardApp')
-	.controller('ControlCtrl', function ($http,$scope,FileUploader) {
+	.controller('ControlCtrl', function ($http,$scope,FileUploader,API_URL) {
 		var cc = this;
 	    cc.hello = "ControlCtrl";
 
         cc.getSlides = function() {
-            $http.get('http://localhost:3000/control/getSlides')
+            $http.get(API_URL +'control/getSlides')
                     
                     .success(function(data, status, headers, config) {
                         cc.slides = data.slides
@@ -18,12 +18,12 @@ angular.module('vangardApp')
                         // or server returns response with an error status.
             });
         };
-
+        console.log(API_URL)
         cc.getSlides();//init
 
-        cc.removeSlde = function(id) {
-            
-            $http.post('http://localhost:3000/control/rmSlides', {slide_id: id})
+        cc.removeSlide = function(id) {
+
+            $http.post(API_URL + 'control/rmSlides', {slide_id: id})
                     
                     .success(function(data, status, headers, config) {
                         cc.getSlides();
@@ -35,7 +35,7 @@ angular.module('vangardApp')
        
 
         var uploader = $scope.uploader = new FileUploader({
-                  url: 'http://localhost:3000/img'
+                  url: API_URL + 'img'
               });
 
               // FILTERS
@@ -77,7 +77,7 @@ angular.module('vangardApp')
 
                     console.log(setSlides);
                     
-                    $http.post('http://localhost:3000/control/setSlides', setSlides)
+                    $http.post(API_URL + 'control/setSlides', setSlides)
                     
                     .success(function(data, status, headers, config) {
                         cc.getSlides();

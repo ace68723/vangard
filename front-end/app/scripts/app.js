@@ -87,5 +87,6 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers','angularFi
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
-});
+})
+.constant('API_URL', 'http://localhost:3000/');
 
