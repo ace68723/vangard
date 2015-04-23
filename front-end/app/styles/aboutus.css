@@ -1,0 +1,370 @@
+
+/*-------------------------------------------------*/
+/* =  about page
+/*-------------------------------------------------*/
+
+.about-page {
+    padding: 40px;
+    background: url('../img/about-bg.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.about-page-content {
+    padding: 30px 15px;
+    background: #fff;
+}
+
+.about-box {
+    margin-bottom: 25px;
+}
+
+.team-post {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    border: 1px solid transparent;
+    transition: all 0.33s ease-in-out;
+    -moz-transition: all 0.33s ease-in-out;
+    -webkit-transition: all 0.33s ease-in-out;
+    -o-transition: all 0.33s ease-in-out;
+}
+
+.team-post:hover {
+    border: 1px solid #e9e8e6;
+}
+
+.team-hover {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 17px 20px;
+    background: rgba(255,255,255,0.85);
+    -webkit-backface-visibility: hidden;
+    transition: all 0.33s ease-in-out;
+    -moz-transition: all 0.33s ease-in-out;
+    -webkit-transition: all 0.33s ease-in-out;
+    -o-transition: all 0.33s ease-in-out;
+}
+
+.team-post:hover .team-hover {
+    bottom: 0;
+}
+
+.team-hover h2 {
+    color: #343434;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    margin: 0 0 5px;
+}
+
+.team-hover span {
+    display: inline-block;
+    color: #343434;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    margin: 0 0 14px;
+}
+
+.team-post img {
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+}
+
+ul.team-social {
+    margin: 0;
+    padding: 0;
+}
+
+ul.team-social li {
+    display: inline-block;
+    margin-right: 2px;
+}
+
+ul.team-social li:last-child {
+    margin-right: 0px;
+}
+
+ul.team-social li a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #a5a5a5;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.17s ease-in-out;
+    -moz-transition: all 0.17s ease-in-out;
+    -webkit-transition: all 0.17s ease-in-out;
+    -o-transition: all 0.17s ease-in-out;
+}
+
+ul.team-social li a:hover {
+    background: #808080;
+}
+
+ul.team-social li a i {
+    color: #fff;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.testimonial ul {
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.client-test {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.client-test img {
+    float: left;
+    margin-right: 28px;
+    max-width: 160px;
+}
+
+.client-test h2 {
+    color: #343434;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    margin: 6px 0 4px;
+}
+
+.client-test h3 {
+    color: #343434;
+    font-size: 12px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    margin: 0 0 15px;
+}
+
+.client-test h3 a {
+    display: inline-block;
+    color: #343434;
+}
+
+ul.star-rate {
+    padding: 0;
+    margin: 0;
+}
+
+ul.star-rate li {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+ul.star-rate li span {
+    display: inline-block;
+    color: #606060;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+}
+
+ul.star-rate li a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+ul.star-rate li a i {
+    font-size: 16px;
+    color: #fcc02e;
+}
+
+ul.star-rate li a.unchecked i {
+    color: #606060;
+}
+
+p.testimonial-text {
+    color: #171717;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    line-height: 26px;
+    font-style: italic;
+    margin: 0 0 15px;
+}
+
+.circle-box-skills {
+    text-align: center;
+    overflow: hidden;
+}
+
+.circle-box {
+    float: left;
+    width: 25%;
+}
+
+.circle {
+    max-width: 100% !important;
+}
+
+.circle-box-skills p {
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.about-me img {
+    max-width: 100%;
+}
+
+.about-me h2 {
+    font-size: 25px;
+    color: #343434;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    margin: 15px 0 10px;
+}
+
+.about-me h3 {
+    font-size: 18px;
+    color: #808080;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f3f3f3;
+    margin: 0 0 25px;
+}
+
+.about-me p {
+    margin: 0 0 25px;
+}
+
+.my-info {
+    border-top: 1px solid #f3f3f3;
+    padding-top: 25px;
+}
+
+.about-me .my-info p {
+    margin-bottom: 12px;
+}
+
+.about-me .my-info p span {
+    color: #343434
+}
+
+.about-me .my-info ul.share-list {
+    margin-top: 0;
+}
+
+.my-signature {
+    text-align: right;
+}
+
+.my-signature img {
+    max-width: 100%;
+    margin-top: 6px;
+}
+
+.carousel-control .glyphicon {
+    display: none;
+}
+
+.carousel-control {
+    width: 25px;
+    height: 25px;
+    background: none;
+    top: -70px;
+    font-size: 17px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: none;
+    -webkit-text-shadow: none;
+    -moz-text-shadow: none;
+    -o-text-shadow: none;
+    opacity: 1;
+    transition: all 0.17s ease-in-out;
+    -moz-transition: all 0.17s ease-in-out;
+    -webkit-transition: all 0.17s ease-in-out;
+    -o-transition: all 0.17s ease-in-out;
+    -webkit-backface-visibility: hidden;
+}
+
+.carousel-control.left {
+    right: 30px;
+    left: auto;
+    background: #a5a5a5;
+}
+
+.carousel-control.left:before {
+    font-family: 'FontAwesome';
+    content: "\f060";
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 25px;
+}
+
+.carousel-control.right {
+    right: 0;
+    background: #a5a5a5;
+}
+
+.carousel-control.right:before {
+    font-family: 'FontAwesome';
+    content: "\f061";
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 25px;
+}
+
+.carousel-control.left:hover {
+    background: #343434;
+}
+
+.carousel-control.right:hover {
+    background: #343434;
+}
+
+.team-testimonial-box .client-test {
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.team-testimonial-box .client-test img {
+    float: none;
+    margin-right: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.work-course-post {
+    padding-right: 40px;
+    margin-bottom: 30px;
+}
+
+.work-course-post h2 {
+    color: #606060;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    margin: 0 0 16px;
+}
+
+.work-course-post p {
+    color: #808080;
+    line-height: 22px;
+}
