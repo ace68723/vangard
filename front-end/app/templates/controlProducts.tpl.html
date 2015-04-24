@@ -94,9 +94,15 @@
                         Add
                     </div>
                 </div>
-                <div class="item item-input item-button-right" 
+
+                <div class="item item-thumbnail-left item-button-right" 
                        ng-repeat="(id,item) in cp.addedImages">
-                    <input type="text" placeholder="Link or upload"  ng-model="item.img">
+                    <img ng-src="{{item.img}}">
+                    <div class="item item-input Vimg-input">
+                        <input type="text" placeholder="Link or upload"  ng-model="item.img">
+                    </div>
+                   
+
                     <div class=" item-note button  button-small button-light" 
                          ng-click="cp.removeImages(id)">
                             Remove
@@ -150,11 +156,7 @@
                 
 
                 <div class= "col col-33" nowrap>
-                     
-                     <label class="item item-input">
-                       <span class="input-label">Product NO.</span>
-                       <input type="number" ng-model="item.product_id" >
-                     </label>
+
                      <button class="button button-positive"
                              ng-click="item.upload()" 
                              ng-disabled="item.isReady || item.isUploading || item.isSuccess">
