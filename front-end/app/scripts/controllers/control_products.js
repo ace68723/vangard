@@ -28,6 +28,8 @@ angular.module('vangardApp')
 		cp.addedImages	 = [];
 		cp.addedVideos	 = [];
 
+		
+		
 		cp.close_add_products_view = true;
 		$timeout(function() {
 			cp.add_products = false;
@@ -35,19 +37,33 @@ angular.module('vangardApp')
 	};
 
 	cp.show_edit_products = function(id) {
+		
+		cp.edit_products = true;
+		cp.uploadProduct = {};
 
 		cp.uploadProduct = cp.products[id]
 		cp.addedImages   = cp.uploadProduct.images;
 		cp.addedVideos   = cp.uploadProduct.videos;
+		
+		if(!cp.addedImages){
+			cp.addedImages = []
+		}
+		
+		if(!cp.addedVideos){
+			cp.addedVideos = []
+		}
 
 		cp.close_add_products_view = false;
 		cp.add_products = true;
 	};
 	cp.close_edit_products = function() {
-		
+		cp.edit_products = false;
+
 		cp.uploadProduct = {};
 		cp.addedImages	 = [];
 		cp.addedVideos	 = [];
+		
+		cp.getProducts();//init
 
 		cp.close_add_products_view = true;
 		$timeout(function() {
@@ -98,7 +114,6 @@ angular.module('vangardApp')
 
         cp.uploadProduct = {};
         cp.save = function() {
-        	cp.uploadProduct.id = cp.uploadProduct.id - 1;//id start from 0
         	cp.uploadProduct.images =  cp.addedImages;
         	cp.uploadProduct.videos =  cp.addedVideos;
         	console.log(cp.uploadProduct)

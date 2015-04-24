@@ -40,14 +40,29 @@
                 <div class="item ">
                     Add Product
                     <div class=" item-note button   button-calm" 
+                          ng-if="!cp.edit_products"   
                          ng-click="cp.close_add_products()">
                         Close
                     </div>
+                    <!-- close button for edit product -->
+                    <div class=" item-note button   button-calm" 
+                         ng-if="cp.edit_products"
+                         ng-click="cp.close_edit_products()">
+                        Close Edit
+                    </div>
                 </div>
-                <label class="item item-input item-stacked-label">
+                <label class="item item-input item-stacked-label"
+                       ng-if="!cp.edit_products">
                     <span class="input-label">Product id (start from 0)</span>
                     <input type="text" placeholder="id" ng-model="cp.uploadProduct.id" >
                 </label>
+                <!-- can not change id, when editing product -->
+                <label class="item item-input item-stacked-label" 
+                       ng-if="cp.edit_products">
+                    <span class="input-label">Product id (start from 0)</span>
+                    <input type="text" placeholder="id" disabled ng-model="cp.uploadProduct.id" >
+                </label>
+
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Product Name</span>
                     <input type="text" placeholder="Name" ng-model="cp.uploadProduct.name" >
