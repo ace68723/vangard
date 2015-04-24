@@ -223,3 +223,9 @@ canvas {
                 height: 100px;
                 margin: 6px 0 0 6px;
             }
+.product-file-input::before{
+	content: 'Upload Product Images';
+}
+.Vhome-description{
+	height:100px;
+}

@@ -49,6 +49,15 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers','angularFi
         }
       }
     })
+    .state('control.products', {
+      url: '/products',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/controlProducts.tpl.html',
+          controller: 'ControlProductsCtrl as cp'
+        }
+      }
+    })
 
     .state('app.home', {
       url: '/home',

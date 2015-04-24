@@ -102,6 +102,40 @@ app.post('/control/rmSlides',function(req,res) {
 
 })
 
+app.get('/control/getProducts',function(req,res) {
+		
+
+		control
+		.getProducts().then(function(products) {
+			
+			res.status(200).send({
+				products: products
+			});
+		})
+		.catch(function(error) {
+		
+		res.status(404).send({
+			message: error
+		});
+	})
+		
+
+})
+app.post('/control/setProducts',function(req,res) {
+		var product 	= req.body;
+		var product_id	= product.id;
+		console.log(product_id);
+
+		control.setProducts(product_id,product).then(function(data) {
+			
+			res.status(200).send({
+				message: 'You are not authorized'
+			});
+		})
+		
+
+})
+
 app.post('/img',function (req, res) {
 
     req.pipe(req.busboy);
