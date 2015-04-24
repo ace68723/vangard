@@ -26,11 +26,11 @@
         <div class="VitemList col-80 col-offset-10">    
 
             <div class="Vhome-item" 
-                 ng-repeat="(id,item) in hc.items"
+                 ng-repeat="(id,item) in hc.products"
                  ng-init="clicked={'z-index':1000-id}">
                 <img ng-style="{'z-index':1000-2*id+2}"
                      class="Vphoto" 
-                     ng-src="{{item.img}}" 
+                     ng-src="{{item.home_img}}" 
                      alt="" 
                      ng-click="hc.showDesc(id)">
                 
@@ -41,7 +41,8 @@
                    
                         <div class="row Vitem-name">
                           <div class="col col-67">{{item.name}}</div>
-                          <div class="col">{{item.view}}</div>
+                          <!-- <div class="col">{{item.view}}</div> -->
+                           <div class="col">153</div>
                         </div>
                         <div class="Vitem-description">
                           <div class="col">{{item.description}}</div>

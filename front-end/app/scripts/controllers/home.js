@@ -26,9 +26,21 @@ angular.module('vangardApp')
                                 // or server returns response with an error status.
                     });
                 };
-        
-        hc.getSlides();
-                
+        hc.getSlides();//init
+
+        hc.getProducts = function() {
+                 $http.get(API_URL +'control/getProducts')
+                         .success(function(data, status, headers, config) {
+                             hc.products = data.products;
+                             hc.showProduct = true;
+                            console.log(hc.products)
+                         })
+                         .error(function(data, status, headers, config) {
+                             // called asynchronously if an error occurs
+                             // or server returns response with an error status.
+                 });
+             };
+        hc.getProducts(); //init
    		hc.items = [{ 	description : 'Sometimes the scent of seasonal hand wash is all we need to rouse our holiday spirits.',
    						img: 'img/item.png',
    						name: 'Name of the Product',
