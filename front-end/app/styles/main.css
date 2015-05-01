@@ -232,9 +232,70 @@ canvas {
 .Vhome-description{
 	height:100px;
 }
+.Vcontrol-blog{
+	height:400px;
+}
 .Vimg-input{
 	width:80%;
 	margin-top: 4%;
 	border-left: #ddd solid 1px;
 	border-right: #ddd solid 1px;
+}
+.Vabout-why{
+	border-style: solid;
+	border-color: #cca352;
+}
+.Vabout-contact-title{
+	  font-size: 25px;
+	  background-color: #000000;
+	  color: #FFFFFF;
+}
+.Vabout-contact{
+	  background-color: #000000;
+	  color: #FFFFFF;
+}
+.Vblog-detail-title{
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	margin-bottom:4%;
+	height: 39px;
+	font-size: 35px;
+	font-weight: 900;
+    border-bottom: solid #000000;
+}
+
+.Vblog-img-box{
+	position: relative;
+	background-color: #198080;
+	color: #FFFFFF;
+	font-size: 25px;
+	text-align: center;
+	line-height: 150%;
+}
+.Vblog-img{
+	width: 100%;
+}
+.Vblog-detail-Ltitle{
+	position: relative;
+	margin-top:1%;
+	margin-left:6%;
+	margin-bottom:4%;
+	width:90%;
+	font-size: 25px;
+	font-weight: 900;
+    border-bottom: solid #FFFFFF;
+}
+.Vblog-detail-Lauthor{
+	text-align: left;
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	font-size: 15px;
+	font-weight: 300;
+}
+.Vblog-close-button{
+	position: absolute;
+	right: 0%;
+	margin-top: -3%;
 }

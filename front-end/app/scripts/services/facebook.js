@@ -19,7 +19,7 @@ angular.module('vangardApp')
                 login:function () {
                     FB.login(function(response) {
                       console.log(response)
-                    }, {scope: 'email,user_likes'});
+                    }, {scope: 'email,user_likes,user_friends'});
                 },
                 getUserInfo:function() {
                     var _self = this;

@@ -15,30 +15,44 @@ angular.module('vangardApp')
    			console.log(index)
    		};
    		hc.getSlides = function() {
+                if(!hc.slides){
                     $http.get(API_URL +'control/getSlides')
                             .success(function(data, status, headers, config) {
                                 hc.slides = data.slides;
-                                hc.showSlides = true;
+                                $timeout(function() {
+                                     hc.showSlides = true;
+                                }, 1000);
+                               
                                console.log(hc.slides)
                             })
                             .error(function(data, status, headers, config) {
                                 // called asynchronously if an error occurs
                                 // or server returns response with an error status.
                     });
-                };
+                }            
+        };
+
         hc.getSlides();//init
 
         hc.getProducts = function() {
-                 $http.get(API_URL +'control/getProducts')
-                         .success(function(data, status, headers, config) {
-                             hc.products = data.products;
-                             hc.showProduct = true;
-                            console.log(hc.products)
-                         })
-                         .error(function(data, status, headers, config) {
-                             // called asynchronously if an error occurs
-                             // or server returns response with an error status.
-                 });
+
+                if(!hc.products){
+                    $http.get(API_URL +'control/getProducts')
+                            .success(function(data, status, headers, config) {
+                                hc.products = data.products;
+                               
+                                $timeout(function() {
+                                      hc.showProduct = true;
+                                }, 1000);
+                               console.log(hc.products)
+                            })
+                            .error(function(data, status, headers, config) {
+                                // called asynchronously if an error occurs
+                                // or server returns response with an error status.
+                    });
+                }
+
+                 
              };
         hc.getProducts(); //init
 

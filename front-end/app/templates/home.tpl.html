@@ -2,11 +2,12 @@
  
   <ion-content class="">
    	
-    <ion-slide-box ng-if="hc.showSlides" 
-                   active-slide="myActiveSlide" 
-                   does-continue="true"
-                   auto-play="true"
-                   show-pager="true">
+    <ion-slide-box  ng-if="hc.showSlides"
+                    class="animated fadeInDown"
+                    active-slide="myActiveSlide" 
+                    does-continue="true"
+                    auto-play="true"
+                    show-pager="true">
 
 
    	  <ion-slide ng-repeat="(id,slide) in hc.slides">
@@ -17,7 +18,7 @@
         
    	</ion-slide-box>
         
-        <div class="VitemList col-80 col-offset-10">    
+        <div class="VitemList col-80 col-offset-10 animated fadeInUp">    
             <!-- repeat products -->
 
             <div class="Vhome-item" 
@@ -66,7 +67,7 @@
                 ng-click="hc.seeMore()">
               See More
         </div>   
-        <div class="button button-dark" 
+<!--         <div class="button button-dark" 
                 style=" margin-left: 45%;" 
                 ng-click="hc.facebook_logout()">
               Logout
@@ -82,7 +83,7 @@
               login
         </div>  
         <fb:login-button show-faces="true" max-rows="1" 
-  size="large"></fb:login-button>
+  size="large"></fb:login-button> -->
      
         
 

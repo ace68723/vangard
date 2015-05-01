@@ -1,0 +1,148 @@
+<ion-view title="Control">
+  <ion-content class="has-header">
+    
+    <div class="VslideList col-80 col-offset-10">    
+
+        <div class="list card" ng-if="true">
+
+            <div class="item item-thumbnail-left"
+                 ng-repeat="(id,item) in cb.blogs" >
+                <img ng-src="{{item.img}}">
+                <h2>{{item.title}}</h2>
+                <p>{{item.brief}}</p>
+                 <p>Author: {{item.author}}</p>
+                <p>Date: {{item.date}}</p>
+                <div class=" item-note button button-calm" 
+                     ng-click="cp.show_edit_products(id)">
+                    Edit
+                </div>
+            </div>
+
+
+        </div>   
+        <div class="button button-calm col-offset-90" 
+             ng-click="cb.show_add_blogs()">
+          Add Blog
+        </div>
+    </div>
+
+	</ion-content>
+</ion-view>
+
+<!-- add blogs -->
+    <ion-view ng-if="cb.add_blogs"title="Control"
+              class="col-80 col-offset-10 animated fadeInUp"
+              ng-class="{fadeOutDown: cb.close_add_blogs_view}">
+        <ion-content class="">
+
+             
+            <div class="list card ">
+                <div class="item ">
+                    Add Blog
+                    <div class=" item-note button   button-calm" 
+                          ng-if="!cp.edit_products"   
+                         ng-click="cb.close_add_blogs()">
+                        Close
+                    </div>
+                    <!-- close button for edit product -->
+                    <div class=" item-note button   button-calm" 
+                         ng-if="cp.edit_products"
+                         ng-click="cp.close_edit_products()">
+                        Close Edit
+                    </div>
+                </div>
+<!--                 <label class="item item-input item-stacked-label"
+                       ng-if="!cp.edit_products">
+                    <span class="input-label">Product id (start from 0)</span>
+                    <input type="text" placeholder="id" ng-model="cp.uploadProduct.id" >
+                </label> -->
+                <!-- can not change id, when editing product -->
+     <!--            <label class="item item-input item-stacked-label" 
+                       ng-if="cp.edit_products">
+                    <span class="input-label">Product id (start from 0)</span>
+                    <input type="text" placeholder="id" disabled ng-model="cp.uploadProduct.id" >
+                </label> -->
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Blog Title</span>
+                    <input type="text" placeholder="Title" ng-model="cb.uploadBlog.title" >
+                </label>
+
+                
+                <label class="item item-input  item-stacked-label">
+                    <span class="input-label">Blog Image</span>
+                    <input type="text" placeholder="Link " ng-model="cb.uploadBlog.img" >
+
+                </label>
+
+                <label class="item item-input  item-stacked-label">
+                    <span class="input-label">Blog Brief</span>
+                    <textarea class="Vhome-description"
+                              placeholder="Brief" 
+                              ng-model="cb.uploadBlog.brief"></textarea>
+                </label>
+                <label class="item item-input  item-stacked-label">
+                    <span class="input-label">Blog </span>
+                    <textarea class="Vcontrol-blog"
+                              placeholder="Blog"
+                              ng-model="cb.uploadBlog.blog"></textarea>
+                </label>
+
+                <div class="  button button-block  button-calm" 
+                     ng-click="cb.save()">
+                        Save
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <input type="file" 
+                   nv-file-select="" 
+                   class="custom-file-input product-file-input" 
+                   uploader="uploader"/>
+
+            <div class= "row"ng-repeat="item in uploader.queue">
+                <div class= "col col-67">
+                     <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                    
+                 
+                     
+                     <div ng-show="uploader.isHTML5" nowrap>
+                         <strong>{{ item.file.name }}</strong>
+                         {{ item.file.size/1024/1024|number:2 }} MB
+                     </div>
+                 </div>
+                
+
+                <div class= "col col-33" nowrap>
+
+                     <button class="button button-positive"
+                             ng-click="item.upload()" 
+                             ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                         Upload
+                     </button>
+
+                     <button class="button button-assertive"
+                             ng-click="item.remove()"
+                             ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                         Romve
+                     </button>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+        </ion-content>
+    </ion-view>
+<!-- add blogs end -->

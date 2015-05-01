@@ -32,7 +32,7 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers','angularFi
            ( https://developers.facebook.com/apps/ ) 
           */
 
-          appId: '435355203304828', 
+          appId: '572853879523895', 
 
           /* 
            Adding a Channel File improves the performance 
@@ -126,6 +126,16 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers','angularFi
       }
     })
 
+    .state('control.blog', {
+      url: '/blog',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/controlBlog.tpl.html',
+          controller: 'ControlBlogCtrl as cb'
+        }
+      }
+    })
+
     .state('app.home', {
       url: '/home',
       views: {
@@ -149,6 +159,7 @@ angular.module('vangardApp', ['ionic','config', 'Vangard.controllers','angularFi
       views: {
         'menuContent' :{
           templateUrl: 'templates/blog.tpl.html',
+          controller: 'BlogCtrl as bc'
         }
       }
     })

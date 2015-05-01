@@ -135,7 +135,20 @@ app.post('/control/setProducts',function(req,res) {
 		
 
 })
+app.post('/control/setblogs',function(req,res) {
+		var blog 	= req.body;
+		var date	= blog.date;
+		console.log(date);
 
+		control.setBlogs(date,blog).then(function(data) {
+			
+			res.status(200).send({
+				message: 'You are not authorized'
+			});
+		})
+		
+
+})
 app.post('/img',function (req, res) {
 
     req.pipe(req.busboy);
