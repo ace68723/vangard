@@ -97,6 +97,15 @@ var setBlogs = function(date, blog) {
 		   deferred.resolve(blog)
 		}
 	});
+	// blogsRef.push(blog, function(error) {
+
+	// 	if(error){
+	// 			deferred.reject(error);
+	// 	}else {
+	// 		console.log(blog)
+	// 	   deferred.resolve(blog)
+	// 	}
+	// });
 	return deferred.promise;
 
 };
@@ -105,7 +114,6 @@ var getBlogs = function() {
 	var deferred = Q.defer();
 
 	blogsRef.on("value", function(snapshot) {
-	  	console.log(snapshot.val());
 	  	var blogs = snapshot.val();
 	   	deferred.resolve(blogs)
 	}, function (errorObject) {

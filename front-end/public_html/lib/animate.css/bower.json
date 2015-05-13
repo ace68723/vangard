@@ -1,0 +1,5 @@
+{
+  "name": "animate.css",
+  "version": "4.0.0.alpha-1",
+  "main": "./dist/animate.css"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "animate.css",
+  "main": "./dist/animate.css",
+  "homepage": "https://github.com/daneden/animate.css",
+  "_release": "4.0.0.alpha-1",
+  "_resolution": {
+    "type": "tag",
+    "tag": "4.0.0.alpha-1",
+    "commit": "e5f2697b6a1744046a010dde86751dccd82e46ae"
+  },
+  "_source": "git://github.com/daneden/animate.css.git",
+  "_target": "4.0.0.alpha-1",
+  "_originalSource": "animate.css"
+}

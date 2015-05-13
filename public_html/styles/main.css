@@ -1,0 +1,363 @@
+/* Your application styles go here */
+.Vmenu{
+	background-color: #000;
+}
+.background, .background .pane, .background .item-complex  {
+    background-color: #000000;
+}
+.item {
+  border-color: #ddd;
+  background-color: #1c1c1c;
+  color: #FFF;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 16px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+}
+.card {
+    background-color: #1c1c1c; 
+}
+
+
+.Vlogo{
+	width: 100%;
+}
+.Vlist{
+	border-color: #00FFAA;
+	background-color: #030303;
+	color: #FFF;
+	position: relative;
+	z-index: 2;
+	display: block;
+	margin: -3px;
+	padding: 16px;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 16px;
+}
+.Vicon{
+	font-size:2.5em;
+}
+.Vitem-font{
+	  font-size: 35px;
+}
+.Vslide{
+	height:auto;
+}
+.Vslide-img{
+	width:100%;
+}
+.VitemList{
+	margin-top: 0%;
+  	margin-left: 0%;
+}
+.Vhome-item{
+	width: 33.3333333333%;
+	display: inline-block;
+	height: auto;
+	/*margin-right: 10px;
+	margin-top: 0.6%;
+	margin-bottom: 20px;*/
+}
+.Vphoto{
+	width:100%;
+	position: relative;
+}
+.Vitem-card {
+  position: absolute;
+  z-index: -1;
+  margin-top: 0px;
+  width: 33.3333333333%;
+  height: 26%;
+  margin-left: auto;
+  background-color: #FFF;
+}
+.Vitem-name{
+	margin-top: 0px;
+	font-size: 19px;
+	color: #084d4d;
+}
+.Vitem-description{
+	margin-top: -7px;
+}
+.Vitem-button{
+	margin-top: -20px;
+}
+.button.button-green.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #084d4d;
+}
+.VitemClicked{
+	z-index: 3;
+}
+.Vproduct-title{
+	position: relative;
+	margin-top:10%;
+	font-size: 50px;
+	font-weight: 900;
+	line-height: normal;
+}
+.Vproduct-subtitle{
+	position: relative;
+	margin-top:10%;
+	font-size: 25px;
+	font-weight: 900;
+	color:#034D56;
+}
+.Vproduct-shopTitle{
+	position: relative;
+	margin-top:3%;
+	font-size: 23px;
+	font-weight: 400;
+}
+.Vproduct-shopInfo{
+	position: relative;
+	margin-left:10%;
+	font-size: 15px;
+	font-weight: 400;
+}
+.Vproduct-eventTitle{
+	position: relative;
+	margin-top:3%;
+	font-size: 23px;
+	font-weight: 400;
+}
+.Vproduct-eventInfo{
+	position: relative;
+	margin-left:10%;
+	font-size: 15px;
+	font-weight: 400;
+}
+.Vproduct-description{
+	position: relative;
+	margin-top:5%;
+}
+.Vproduct-share{
+	position: relative;
+	margin-top:5%;
+	font-size: 23px;
+	font-weight: 400;
+}
+a:link {
+    color: #034D56;
+}
+.Vblog-author{
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	font-size: 15px;
+	font-weight: 300;
+}
+.Vblog-title{
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	font-size: 25px;
+	font-weight: 900;
+}
+.Vblog-brief{
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	margin-right:4%;
+	font-size: 15px;
+	font-weight: 400;
+}
+.Vblog-date-box{
+/*	position: relative;
+	margin-top: 2%;
+	width: 100%;
+	height: 91%;
+	max-height: 50px;*/
+	border-right: 1px solid #eee;
+}
+.vblog-date{
+	position: relative;
+	margin-top: 14%;
+	margin-left: 21%;
+	background-color: #21CDEC;
+	color: #FFFFFF;
+	width: 68%;
+	height: 22%;
+	font-size: 25px;
+	text-align: center;
+	line-height: 150%;
+}
+.Vvideo{
+	height: 100%;
+}
+
+
+
+/* for dashboard*/
+.VslideList{
+	margin-top:10%;
+}
+.Vslide-item{
+	width: 300px;
+	display: inline-block;
+	height: 150px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Add slides';
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+
+canvas {
+                background-color: #f3f3f3;
+                -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+                -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+                box-shadow: 3px 3px 3px 0 #e3e3e3;
+                border: 1px solid #c3c3c3;
+                height: 100px;
+                margin: 6px 0 0 6px;
+            }
+.product-file-input::before{
+	content: 'Upload Product Images';
+}
+.Vhome-description{
+	height:100px;
+}
+.Vcontrol-blog{
+	height:400px;
+}
+.Vimg-input{
+	width:80%;
+	margin-top: 4%;
+	border-left: #ddd solid 1px;
+	border-right: #ddd solid 1px;
+}
+.Vabout-why{
+	border-style: solid;
+	border-color: #00FFAA;
+}
+.Vabout-why2{
+	border-style: none;
+	border-color: #00FFAA;
+}
+.Vabout-why-front{
+	position: absolute;
+	margin-left: 27%;
+	margin-top: -14%;
+	font-size: 25px;
+	line-height: 30px;
+}
+.Vabout-contact-title{
+	  font-size: 25px;
+	  background-color: #1c1c1c;
+	  color: #FFFFFF;
+}
+.Vabout-contact{
+	  background-color: #1c1c1c;
+	  color: #FFFFFF;
+}
+.Vblog-detail-title{
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	margin-bottom:4%;
+	height: 39px;
+	font-size: 35px;
+	font-weight: 900;
+    border-bottom: solid #000000;
+}
+
+.Vblog-img-box{
+	position: relative;
+	background-color: #198080;
+	color: #FFFFFF;
+	font-size: 25px;
+	text-align: center;
+	line-height: 150%;
+}
+.Vblog-img{
+	width: 100%;
+}
+.Vblog-detail-Ltitle{
+	position: relative;
+	margin-top:1%;
+	margin-left:6%;
+	margin-bottom:4%;
+	width:90%;
+	font-size: 25px;
+	font-weight: 900;
+    border-bottom: solid #FFFFFF;
+}
+.Vblog-detail-Lauthor{
+	text-align: left;
+	position: relative;
+	margin-top:1%;
+	margin-left:4%;
+	font-size: 15px;
+	font-weight: 300;
+}
+.Vblog-close-button{
+	position: absolute;
+	right: 0%;
+	margin-top: -3%;
+}
+.Vabout-img{
+	height:200px;
+	width:200px;
+}
+.Vblog-img{
+	height:300px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  line-height: 1.2; }
+.button-clear.button-clear {
+  color: #ffffff;
+}
+.button.button-yellow.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  /*color: #ffffff; */
+}
+.button-clear.active, .button-clear.activated {
+   opacity: 1; 
+  color: #FFDA00;
+}
+
+
+

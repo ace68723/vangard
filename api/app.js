@@ -135,6 +135,25 @@ app.post('/control/setProducts',function(req,res) {
 		
 
 })
+app.get('/control/getBlogs',function(req,res) {
+		
+
+		control
+		.getBlogs().then(function(blogs) {
+			
+			res.status(200).send({
+				blogs: blogs
+			});
+		})
+		.catch(function(error) {
+		
+		res.status(404).send({
+			message: error
+		});
+	})
+		
+
+})
 app.post('/control/setblogs',function(req,res) {
 		var blog 	= req.body;
 		var date	= blog.date;

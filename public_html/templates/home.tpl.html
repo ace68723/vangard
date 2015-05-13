@@ -1,0 +1,217 @@
+<ion-view title="Home">
+ 
+  <ion-content>
+   	
+    <ion-slide-box  ng-if="hc.showSlides"
+                    class="animated fadeInDown"
+                    active-slide="myActiveSlide" 
+                    does-continue="true"
+                    auto-play="true"
+                    show-pager="true">
+
+
+   	  <ion-slide ng-repeat="(id,slide) in hc.slides">
+
+        <img class="Vslide-img" ng-src="{{slide.img}}" >
+
+   	  </ion-slide>
+        
+   	</ion-slide-box>
+        
+        <div class="VitemList  animated fadeInUp">    
+            <!-- repeat products -->
+
+            <div class="Vhome-item" 
+                 ng-repeat="(id,item) in hc.products"
+                 ng-init="clicked={'z-index':1000-id}">
+                 <!-- {{hc.showId == id}} -->
+                
+                <img ng-style="{'z-index':1000-2*id+2}"
+                     class="Vphoto" 
+                     ng-src="{{item.home_img}}" 
+                     alt="" 
+                     ng-click="hc.showDesc(id)">
+                
+                <div ng-class="{slideOutUp:(hc.showId !== id),
+                                slideInDown:(hc.showId == id)}"
+                     ng-style="{'z-index':1000-2*id+1}"
+                     class=" Vitem-card  animated "
+                     ng-show="hc.showId == id">
+                   
+                        <div class="row Vitem-name">
+                          <div class="col col-67">{{item.name}}</div>
+                          <!-- <div class="col">{{item.view}}</div> -->
+                           <div class="col">153</div>
+                        </div>
+                        <div class="Vitem-description">
+                          <div class="col">{{item.home_description}}</div>
+                          
+                        </div>
+                        <div class=" Vitem-button">
+                          <div class="col col-offset-25">
+                              <div class="button button-clear button-green"
+                                      ng-click="hc.showProView(id)">
+                                Check out this product 
+                              </div>
+                          </div>
+                          
+                        </div>
+                   
+                </div>
+            </div>
+            <!-- repeat products  end-->
+
+        </div>   
+        <div class="button button-dark" 
+                style=" margin-left: 45%;" 
+                ng-click="hc.seeMore()">
+              See More
+        </div>   
+<!--         <div class="button button-dark" 
+                style=" margin-left: 45%;" 
+                ng-click="hc.facebook_logout()">
+              Logout
+        </div>  
+        <div class="button button-dark" 
+                style=" margin-left: 45%;" 
+                ng-click="hc.facebook_get_user_info()">
+              Get User
+        </div>  
+         <div class="button button-dark" 
+                style=" margin-left: 45%;" 
+                ng-click="hc.facebook_login()">
+              login
+        </div>  
+        <fb:login-button show-faces="true" max-rows="1" 
+  size="large"></fb:login-button> -->
+     
+        
+
+
+
+  </ion-content>
+</ion-view>
+
+
+<!-- product view -->
+    <ion-view title="Home" 
+              class="animated slideInUp" 
+              ng-class="{slideOutDown:!hc.showProduct}"
+              ng-if="hc.proView">
+        
+        <div class="bar bar-header bar-dark">
+            <i class="icon ion-ios7-arrow-back"></i> 
+            <h1 class="title">{{hc.product.name}}</h1>
+            <div class="buttons">
+                <div class="button button-clear" ng-click="hc.closeProView()" ui-sref="app.home">
+                    Close
+                </div>
+            </div>
+        </div>
+
+        <ion-content class="col col-50 has-header" 
+                     scroll="false" >
+          
+
+
+          <ion-slide-box ng-if="hc.show_product_slides"
+                         delegate-handle="Slider" 
+                         on-slide-changed="slideHasChanged($index)" 
+                         show-pager="false" 
+                         does-continue="true"
+                         slide-interval="4000">
+            <ion-slide ng-repeat="(id, slide) in hc.product_slides">
+              
+              <div class="box Vvideo" >
+                <img  class="img" 
+                      ng-if="slide.img && id > slideIndex - 2 && id < slideIndex + 2 "
+                      ng-src="{{slide.img}}">
+             <!--    <iframe width="560" height="315" src="https://www.youtube.com/embed/y0tuQCl57Rc" frameborder="0" allowfullscreen></iframe> -->
+<!--                 <iframe ng-if="slide.video && id > slideIndex - 2 && id < slideIndex + 2"
+                        width="100%" 
+                        height="350px"
+                        src="https://www.youtube.com/embed/OlXrjTh7vHc" frameborder="0"  allowfullscreen></iframe>     
+                 -->
+<!--                 <embed-video ng-if="slide.video && id > slideIndex - 2 && id < slideIndex + 2"
+                             width="854" height="480"
+                             data-ng-href="https://www.youtube.com/watch?v=OlXrjTh7vHc&app=desktop" 
+                             class="ng-isolate-scope"
+                             controls=0>
+                <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a>
+
+                </embed-video> -->
+                    <embed-video 
+                        iframe-id="{{id}}"
+                        ng-if="slide.video && id > slideIndex - 2 && id < slideIndex + 2"
+                        width="100%" height="100%" 
+                        ng-href="{{slide.video}}">
+
+                    </embed-video>
+
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+          <br>
+          
+          <ion-scroll ng-if="hc.show_product_slides" 
+                      scroller direction="x" 
+                      class="nav-scroller" 
+                      delegate-handle="Nav">
+            
+            <div  class="nav" 
+                  ng-repeat="(id, nav) in hc.product_slides"
+                  ng-click="navHasChanged(id)"
+                  id="anchor{{id}}">
+                
+                {{nav.id}}
+                <img  ng-if="nav.img"
+                      class="nav-img" 
+                      ng-class="{'active':isSelectedNav(id)}"
+                      ng-src="{{nav.img}}">
+
+                <img  ng-if="nav.video"
+                      class="nav-img" 
+                      ng-class="{'active':isSelectedNav(id)}"
+                      ng-src="{{nav.video_img}}">
+                
+            </div>
+          </ion-scroll> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ion-content>
+        <ion-content class="col col-50 col-offset-50 has-header">
+            <div class="Vproduct-title">{{hc.product.name}}</div>
+            <div class="Vproduct-subtitle">Me and 125 others wanna try this</div>
+            <div class="Vproduct-shopTitle">{{hc.product.store.name}}</div>
+            <div class="Vproduct-shopInfo">
+                {{hc.product.store.address}}<br>
+                {{hc.product.store.time}}<br>
+                <a href="websit" target="_blank">{{hc.product.store.website}}</a>
+            </div>
+            <div class="Vproduct-eventTitle">{{hc.product.event.name}}</div>
+            <div class="Vproduct-eventInfo">
+                {{hc.product.event.address}}<br>
+                {{hc.product.event.time}}<br>
+                <a href="resvp" target="_blank">{{hc.product.event.website}}</a>
+            </div>
+            <div class="Vproduct-description">
+                <p>{{hc.product.product_description}}</p>
+            </div>
+            <div class="Vproduct-share">Share</div>
+        </ion-content>
+    </ion-view>
+<!-- product view end -->

@@ -1,0 +1,61 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content>
+<!--     <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+    </ion-nav-bar> -->
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left" expose-aside-when="large" class="Vmenu">
+<!--     <header class="bar bar-header bar-stable">
+      <h1 class="title">Left</h1>
+    </header> -->
+    <ion-content class="has-header" scroll="false">
+      <ion-list >
+        <ion-item nav-clear menu-close ng-click="login()" class="Vlist">
+            <img src="img/vangard.png" alt="vangard logo" class="Vlogo">
+        </ion-item>
+        
+            <ion-item nav-clear menu-close   class="Vlist ">
+              
+                <button class="button button-clear button-light Vitem-font"
+                        ui-sref="control.slides"
+                        ui-sref-active="active">
+                    Slides
+                </button>
+            </ion-item>
+            <ion-item nav-clear menu-close   class="Vlist ">
+              
+                <button class="button button-clear button-light Vitem-font"
+                        ui-sref="control.products"
+                        ui-sref-active="active">
+                    Products
+                </button>
+            </ion-item>
+            <ion-item nav-clear menu-close class="Vlist ">
+                <button class="button button-clear button-light Vitem-font"
+                        
+                        ui-sref-active="active">
+                    Contact
+                </button>
+            </ion-item>
+            <ion-item nav-clear menu-close class="Vlist ">
+                <button class="button button-clear button-light Vitem-font"
+                        ui-sref="control.blog"
+                        ui-sref-active="active">
+                    Blog
+                </button>
+            </ion-item>
+
+      </ion-list>
+      <br>
+      <br>
+      <br>
+      
+       <button class="button button-clear button-light ">
+            Legal Stuff 
+       </button>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

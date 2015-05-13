@@ -1,0 +1,230 @@
+<ion-view title="Control" >
+  
+  <ion-content class="has-header">
+
+    <div class="VslideList col-80 col-offset-10">    
+
+        <div class="list card" ng-if="cp.showProducts">
+
+            <div class="item item-thumbnail-left"
+                 ng-repeat="(id,item) in cp.products" >
+                <img ng-src="{{item.home_img}}">
+                <h2>{{item.name}}</h2>
+                <p>{{item.home_description}}</p>
+                <div class=" item-note button   button-calm" 
+                     ng-click="cp.show_edit_products(id)">
+                    Edit
+                </div>
+            </div>
+
+
+        </div>   
+        <div class="button button-calm col-offset-90" 
+             ng-click="cp.show_add_products()">
+          Add Product
+        </div>
+    </div>
+	 
+	</ion-content>
+</ion-view>
+
+<!-- add products -->
+    <ion-view ng-if="cp.add_products"title="Control"
+              class="col-80 col-offset-10 animated fadeInUp"
+              ng-class="{fadeOutDown: cp.close_add_products_view}">
+        <ion-content class="">
+
+             
+            <div class="list card ">
+                <div class="item ">
+                    Add Product
+                    <div class=" item-note button   button-calm" 
+                          ng-if="!cp.edit_products"   
+                         ng-click="cp.close_add_products()">
+                        Close
+                    </div>
+                    <!-- close button for edit product -->
+                    <div class=" item-note button   button-calm" 
+                         ng-if="cp.edit_products"
+                         ng-click="cp.close_edit_products()">
+                        Close Edit
+                    </div>
+                </div>
+                <label class="item item-input item-stacked-label"
+                       ng-if="!cp.edit_products">
+                    <span class="input-label">Product id (start from 0)</span>
+                    <input type="text" placeholder="id" ng-model="cp.uploadProduct.id" >
+                </label>
+                <!-- can not change id, when editing product -->
+                <label class="item item-input item-stacked-label" 
+                       ng-if="cp.edit_products">
+                    <span class="input-label">Product id (start from 0)</span>
+                    <input type="text" placeholder="id" disabled ng-model="cp.uploadProduct.id" >
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Product Name</span>
+                    <input type="text" placeholder="Name" ng-model="cp.uploadProduct.name" >
+                </label>
+
+                
+                <label class="item item-input  item-stacked-label">
+                    <span class="input-label">Home Page Image</span>
+                    <input type="text" placeholder="Link " ng-model="cp.uploadProduct.home_img" >
+
+                </label>
+
+                <label class="item item-input  item-stacked-label">
+                    <span class="input-label">Home Page Description</span>
+                    <textarea class="Vhome-description"
+                              placeholder="Description" 
+                              ng-model="cp.uploadProduct.home_description"></textarea>
+                </label>
+                <label class="item item-input  item-stacked-label">
+                    <span class="input-label">Product Description</span>
+                    <textarea class="Vhome-description"
+                              placeholder="Description"
+                              ng-model="cp.uploadProduct.product_description"></textarea>
+                </label>
+                <!-- store info -->
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Store</span>
+                    <input type="text" 
+                           placeholder="Store Name" 
+                           ng-model="cp.uploadProduct.store.name" >
+                </label>
+                <label class="item item-input">
+                    <input  type="text" 
+                            placeholder="Store Address" 
+                            ng-model="cp.uploadProduct.store.address" >
+                </label>
+                <label class="item item-input">
+                    <input  type="text" 
+                            placeholder="Store Open Time" 
+                            ng-model="cp.uploadProduct.store.time" >
+                </label>
+                <label class="item item-input ">
+                    <input  type="text" 
+                            placeholder="Store Website" 
+                            ng-model="cp.uploadProduct.store.website" >
+                </label>
+                <!-- store info end -->
+                
+                <!-- event info -->
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Event</span>
+                    <input type="text" 
+                           placeholder="Event Name" 
+                           ng-model="cp.uploadProduct.event.name" >
+                </label>
+                <label class="item item-input">
+                    <input  type="text" 
+                            placeholder="Event Address" 
+                            ng-model="cp.uploadProduct.event.address" >
+                </label>
+                <label class="item item-input">
+                    <input  type="text" 
+                            placeholder="Event Time" 
+                            ng-model="cp.uploadProduct.event.time" >
+                </label>
+                <label class="item item-input ">
+                    <input  type="text" 
+                            placeholder="Event Website" 
+                            ng-model="cp.uploadProduct.event.websit" >
+                </label>
+                <!-- event infto end -->
+
+                <div class="item "  >
+                    Product Image
+                    <div class=" item-note button   button-light" ng-click="cp.addImages()">
+                        Add
+                    </div>
+                </div>
+
+                <div class="item item-thumbnail-left item-button-right" 
+                       ng-repeat="(id,item) in cp.addedImages">
+                    <img ng-src="{{item.img}}">
+                    <div class="item item-input Vimg-input">
+                        <input type="text" placeholder="Link or upload"  ng-model="item.img">
+                    </div>
+                   
+
+                    <div class=" item-note button  button-small button-light" 
+                         ng-click="cp.removeImages(id)">
+                            Remove
+                    </div>
+                </div>
+
+                <div class="item "  >
+                    Product Video
+                    <div class=" item-note button   button-light" 
+                         ng-click="cp.addVideos()">
+                        Add
+                    </div>
+                </div>
+                <div class="item item-input item-button-right" 
+                       ng-repeat="(id,item) in cp.addedVideos">
+                    <input type="text" placeholder="Link" ng-model="item.video">
+                    <div class=" item-note button  button-small button-light" 
+                         ng-click="cp.removeVideos(id)">
+                            Remove
+                    </div>
+                </div>
+                <div class="  button button-block  button-calm" 
+                     ng-click="cp.save()">
+                        Save
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <input type="file" 
+                   nv-file-select="" 
+                   class="custom-file-input product-file-input" 
+                   uploader="uploader"/>
+
+            <div class= "row"ng-repeat="item in uploader.queue">
+                <div class= "col col-67">
+                     <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                    
+                 
+                     
+                     <div ng-show="uploader.isHTML5" nowrap>
+                         <strong>{{ item.file.name }}</strong>
+                         {{ item.file.size/1024/1024|number:2 }} MB
+                     </div>
+                 </div>
+                
+
+                <div class= "col col-33" nowrap>
+
+                     <button class="button button-positive"
+                             ng-click="item.upload()" 
+                             ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                         Upload
+                     </button>
+
+                     <button class="button button-assertive"
+                             ng-click="item.remove()"
+                             ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                         Romve
+                     </button>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+        </ion-content>
+    </ion-view>
+<!-- add products end -->

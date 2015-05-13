@@ -6,8 +6,10 @@
     "animate.css": "4.0.0.alpha-1",
     "angular-file-upload": "~1.1.5",
     "es5-shim": "~4.1.1",
-    "lodash": "~3.7.0",
-    "ng-videosharing-embed": "~0.3.2"
+    "lodash": "~3.8.0",
+    "ng-videosharing-embed": "~0.3.2",
+    "moment": "~2.10.2",
+    "angular-google-plus": "~0.1.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.17",
